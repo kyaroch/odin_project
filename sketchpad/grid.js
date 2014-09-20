@@ -6,7 +6,7 @@ function changeColor(square, transition) {
       square.css("background-color", "#" + newColor);
     }
     square.animate({opacity: (currentOpacity + 0.2)});
-  } else {
+  } else if (currentOpacity < 1) {
     square.animate({opacity: 1});
   }
 }
