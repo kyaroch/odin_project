@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+    <script type="text/javascript" src="grid.js"></script>
+    <style>
+    div#container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    div#gridcontainer {
+      margin-top: 5px;
+    }
+    
+    div#gridwrapper {
+      border: 1px solid black;
+      display: inline-block;
+    }
+    
+    div.row {
+        clear: both;
+        margin: 0px;
+    }
+
+    div.square {
+        display: inline-block;
+        background-color: #000000;
+        opacity: 0;
+    }
+    
+    #alert {
+      color: red;
+    }
+    </style>
+  <body>
+    <div id="container">
+      Grid size: <input type="text" name="boxsize" value="16">
+      Transition: <select name="method">
+        <option value="0">Instant</option>
+        <option value="1">Gradual</option>
+        <option value="2">Colorful</option>
+      </select>
+      <button id="submit" type="button">Draw grid</button>
+      <span id="alert"></span>
+      <div id="gridcontainer">
+        <div id="gridwrapper"></div>
+      </div>
+    </div>
+  </body>
+</html>
