@@ -16,20 +16,21 @@ function drawGrid() {
   var transition = +$("select").val();
   var rowDiv;
   var boxSize;
+  var gridWidth;
   if (gridSize <= 100 && gridSize >= 1) {
     rowDiv = "<div class='row'>" + Array(gridSize + 1).join("<div class='square'></div>") + "</div>";
     $("#gridwrapper").empty();
-    $("#gridcontainer").css("width", $(window).height() * 0.9);
-    boxSize = Math.floor($("#gridcontainer").width() / gridSize);
+    $("#alert").empty();
+    gridWidth = $(window).height() * 0.9;
+    boxSize = Math.floor(gridWidth / gridSize);
     for (var i = 0; i < gridSize; i++) {
       $("#gridwrapper").append(rowDiv);
-      //#gridwrapper div is necessary to draw border
-      //#gridcontainer may be slightly too big because of rounding
     }
-    $(".square").css("height", "100%");
     $(".square").css("width", boxSize);
     $(".row").css("height", boxSize);
-    $(".square").mouseenter( function() {changeColor($(this), transition)});
+    $(".square").mouseenter( function() {
+      changeColor($(this), transition)
+    });
   } else {
     $("#alert").text("Size must be between 1 and 100");
   }

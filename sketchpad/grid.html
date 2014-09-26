@@ -9,13 +9,10 @@
         margin-right: auto;
     }
 
-    div#gridcontainer {
-      margin-top: 5px;
-    }
-    
     div#gridwrapper {
       border: 1px solid black;
       display: inline-block;
+      clear: both;
     }
     
     div.row {
@@ -25,27 +22,30 @@
 
     div.square {
         display: inline-block;
+        height: 100%;
         background-color: #000000;
         opacity: 0;
     }
     
     #alert {
       color: red;
+      margin: 0px;
+      height: 1.2em;
     }
     </style>
   <body>
     <div id="container">
-      Grid size: <input type="text" name="boxsize" value="16">
-      Transition: <select name="method">
-        <option value="0">Instant</option>
-        <option value="1">Gradual</option>
-        <option value="2">Colorful</option>
-      </select>
-      <button id="submit" type="button">Draw grid</button>
-      <span id="alert"></span>
-      <div id="gridcontainer">
-        <div id="gridwrapper"></div>
-      </div>
+      <form>
+        Grid size: <input type="text" name="boxsize" value="16">
+        Transition: <select name="method">
+          <option value="0">Instant</option>
+          <option value="1">Gradual</option>
+          <option value="2">Colorful</option>
+        </select>
+        <button id="submit" type="button">Draw grid</button>
+      </form>
+      <p id="alert"></p>
+      <div id="gridwrapper"></div>
     </div>
   </body>
 </html>
